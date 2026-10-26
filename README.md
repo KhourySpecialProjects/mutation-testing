@@ -2,17 +2,13 @@
 
 ## Introduction
 
-The learning outcomes of this activity are as follows:
-- Understand the purpose of mocking in unit testing
-- Learn how to measure test adequacy
-
-To help achive the learning outcomes, we define a simple REST web server using Express and Typescript. The server connects to a MongoDB database and interacts with it thru an object data modeling library 
+We define a simple REST web server using Express and Typescript. The server connects to a MongoDB database and interacts with it thru an object data modeling library 
 Mongoose. Unit tests are written in jest to verify the behavior of the REST endpoints. Stryker, a mutation testing tool, is used to measure test adequacy.
 
 
 ## Setup
 
-Before proceeding you will need to install the following:
+Before proceeding, you will need to install the following:
 
 - Node.js (vs20 or later). Download [here](https://nodejs.org/en/download)
 - npm package manager. Comes bundled with Node.js
@@ -75,37 +71,9 @@ application logic that needs to be tested thorougly. Adjust them in `stryker.con
 | Low (yellow) | ≥ 60% |
 | Break (fail CI) | < 50% |
 
-## For You To Do
+Running the run stryker command will generate a report in `reports/mutation/mutation.html`.
 
-A GET endpoint for "books/recent" has been defined in `routes/bookRouter.ts`. Read the comment for this endpoint and the function
-to understand what this endpoint is doing. Next read the 
-corresponding jest test in `__tests/bookRouter.recent.test.ts`. In the test note how the mongoose schema and the corresponding database queries
-have been mocked. Think about why they were mocked. If the queries are 
-mocked then what is the purpose of the test? Discuss this in your group.
+# For You To Do
 
-The next step is to run the test using the following command:
-
-`npm run test -- src/__tests__/bookRouter.recent.test.ts`
-
-The test should pass. That is great! However, how do we know we have
-written enough tests. This is where the stryker mutation tool is useful.
-It will generate incorrect mutants automatically and if our tests
-are good enough they will fail rightly fail against those mutants. So,
-the next step is to run stryker on this test using the command:
-
-`npm run stryker`
-
-Running this command will generate a report in `reports/mutation/mutation.html`. Open the html file in a browser. Inspect the 
-mutation report for the `bookRouter.ts` file. The report will show
-you the following:
-
-- Killed. The number of mutants killed by your tests. This is good. 
-- Survived. The number of mutants that your tests were unable to kill. This means your existing tests are weak. Strengthen them.
-- No Coverage. The number of mutants which were not executed by your tests. This implies have untested code. Write new tests or remove dead code.
-
-Ideally your tests should kill all mutants. But this may not be possible due to some mutants being behaviorally equivalent. When you are unable to kill a mutant, think hard. Do you have code
-that could be re-written or re-designed? Do you have redundant or dead code that could be removed? Or maybe the mutant is simply not possible given your input space. 
-
-Work with your group to pick at least one survived mutant and one
-no coverage mutant. Focus on the GET endpoint for "books/recent". Write tests to kill them.
+Do the activity in [activity.md](activity.md)
 
