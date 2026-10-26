@@ -1,3 +1,5 @@
+.DS_Store
+.idea/
 # Logs
 logs
 *.log
@@ -21,6 +23,7 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 *.lcov
+reports/
 
 # nyc test coverage
 .nyc_output
