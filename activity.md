@@ -95,7 +95,7 @@ Install the tool for your stack and kick off a first run **scoped to the one fil
 
 | Stack      | Tool                                  | Scope it with                             | Link     |
 |------------|---------------------------------------|-------------------------------------------|----------|
-| TypeScript | StrykerJS + the runner plugin for your test framework | `--mutate src/<feature>.ts`               | https://stryker-mutator.io/docs/stryker-js/typescript-checker/ |
+| TypeScript | StrykerJS + the runner plugin for your test framework | `--mutate src/<feature>.ts`               | [https://stryker-mutator.io/docs/stryker-js/typescript-checker/](https://stryker-mutator.io/docs/stryker-js/getting-started/) |
 | Java       | PIT (Maven or Gradle plugin)          | `targetClasses`, `targetTests`            | https://pitest.org/quickstart/ |
 | Python     | mutmut                                | `--paths-to-mutate <path>`                | https://mutmut.readthedocs.io/en/latest/#install-and-run |
 
